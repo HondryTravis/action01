@@ -22,7 +22,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-          WORKFLOW_GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
       # Run node command
       - name: Run install
         run: |
@@ -46,7 +45,7 @@ jobs:
           git config --global user.email ${{ secrets.WORKFLOW_EMAIL }}
           git add -A
           git commit -m 'deploy'
-          git push -f https://${{ secrets.WORKFLOW_EMAIL }}@github.com/HondryTravis/HondryTravis.github.io master
+          git push -f https://${{ secrets.WORKFLOW_GITHUB_TOKEN }}@github.com/HondryTravis/HondryTravis.github.io master
           cd -
       - name: Notification
         run: echo 'Done. Your build exited with 0;'
