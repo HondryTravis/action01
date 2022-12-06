@@ -35,10 +35,10 @@ jobs:
           echo `yarn --version`
       - name: Run build
         run: |
-          cp index.js build
+          cp index.js ./build
       - name: Run init git repository and create commit
         run: |
-          cd build
+          cd ./build
           git init
           git add -A
           git commit -m 'deploy'
