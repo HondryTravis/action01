@@ -29,9 +29,9 @@ jobs:
           yarn
       - name: Run Print INFO
         run: |
-          echo `node -v`
-          echo `npm -v`
-          echo `yarn --version`
+          echo node: `node -v`
+          echo npm: `npm -v`
+          echo yarn: `yarn --version`
       - name: Run build
         run: |
           cp index.js build
