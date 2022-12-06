@@ -22,19 +22,22 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      # Run node command
-      - name: Run install
+      # install command
+      - name: Run Install Stage
         run: |
           npm i -g yarn
           yarn
+      # cat some variables
       - name: Run Print INFO
         run: |
           echo node: `node -v`
           echo npm: `npm -v`
           echo yarn: `yarn --version`
-      - name: Run build
+      # build command
+      - name: Run Build Stage
         run: |
           cp index.js build
+      # deploy command
       - name: Run init git repository and create commit
         run: |
           cd build
@@ -46,5 +49,6 @@ jobs:
           git commit -m 'deploy'
           git push -f https://${{ secrets.WORKFLOW_GITHUB_TOKEN }}@github.com/HondryTravis/action02.git master
           cd -
+      # notification
       - name: Notification
         run: echo 'Done. Your build exited with 0;'
