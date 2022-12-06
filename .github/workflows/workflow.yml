@@ -45,7 +45,7 @@ jobs:
           git config --global user.email ${{ secrets.WORKFLOW_EMAIL }}
           git add -A
           git commit -m 'deploy'
-          git push -f https://${{ secrets.WORKFLOW_GITHUB_TOKEN }}@github.com/action02/action02.git master
+          git push -f https://${{ secrets.WORKFLOW_GITHUB_TOKEN }}@github.com/HondryTravis/action02.git master
           cd -
       - name: Notification
         run: echo 'Done. Your build exited with 0;'
