@@ -27,18 +27,16 @@ jobs:
         run: |
           npm i -g yarn
           yarn
-      - name: Run Echo INFO
+      - name: Run Print INFO
         run: |
           echo `node -v`
           echo `npm -v`
           echo `yarn --version`
       - name: Run build
         run: |
-          ls
-          cp index.js ./build
+          cp index.js build
       - name: Run init git repository and create commit
         run: |
-          ls
           cd build
           git init
           git config --global user.name ${{ secrets.WORKFLOW_USERNAME }}
