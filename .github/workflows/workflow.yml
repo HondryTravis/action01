@@ -28,7 +28,7 @@ jobs:
           npm i -g yarn
           yarn
       # cat some variables
-      - name: Run Print INFO
+      - name: Run Cat Variables
         run: |
           echo node: `node -v`
           echo npm: `npm -v`
